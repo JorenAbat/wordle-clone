@@ -1,35 +1,43 @@
+/* General Body and Layout */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica", sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background-color: #f9f8f6; /* Light pastel background */
 }
 
+/* Heading */
 h1 {
-  margin-top: 20px;
+  font-size: 3rem;
+  margin-top: 30px;
+  color: #4e6e81; /* Soft pastel blue */
+  font-weight: bold;
 }
 
+/* Game Board */
 #game-board {
   display: grid;
-  grid-template-columns: repeat(5, 50px);
-  grid-gap: 5px;
+  grid-template-columns: repeat(5, 60px);
+  grid-gap: 8px;
   justify-content: center;
-  margin: 20px auto;
+  margin: 40px auto;
+  max-width: 350px;
 }
 
 /* Box styles */
 #game-board div {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #000;
-  background-color: gray; /* Initially gray for absent */
-  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px; /* Rounded corners for a softer look */
+  background-color: #c5c5c5; /* Soft pastel gray for absent letters */
+  font-size: 1.8rem;
   text-align: center;
-  line-height: 50px;
-  color: #000;
-  opacity: 1; /* Box is visible */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color change */
+  line-height: 60px;
+  color: #3b3b3b; /* Slightly darker text for readability */
+  opacity: 1;
+  transition: background-color 0.4s ease, color 0.4s ease,
+    transform 0.3s ease-in-out;
 }
 
 /* Animation for letter reveal */
@@ -39,7 +47,7 @@ h1 {
     opacity: 0;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: 1;
   }
   100% {
@@ -55,18 +63,18 @@ h1 {
 
 /* Box Styles for Feedback */
 #game-board div.correct {
-  background-color: green !important;
-  color: white !important;
+  background-color: #a8d5ba; /* Pastel green for correct letters */
+  color: white;
 }
 
 #game-board div.present {
-  background-color: yellow !important;
-  color: black !important;
+  background-color: #f9e9a2; /* Soft pastel yellow for present letters */
+  color: #3b3b3b; /* Keep text dark for visibility */
 }
 
 #game-board div.absent {
-  background-color: gray !important;
-  color: white !important;
+  background-color: #d6d6d6; /* Light gray for absent letters */
+  color: #a1a1a1; /* Slightly lighter text color */
 }
 
 /* Make sure the letter is initially invisible */
@@ -75,6 +83,45 @@ h1 {
   transition: opacity 0.3s ease-in-out;
 }
 
+/* Ensure letter becomes visible after reveal */
 #game-board div.reveal span {
-  opacity: 1; /* Make letter visible */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Input and Button Styles */
+input {
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  border: 2px solid #a8d5ba; /* Pastel green border */
+  margin-top: 20px;
+  width: 200px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4e6e81; /* Soft blue border on focus */
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  background-color: #f9e9a2; /* Pastel yellow background */
+  color: #3b3b3b;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f2d347; /* Darker yellow on hover */
+}
+
+button:disabled {
+  background-color: #d1d1d1; /* Disabled state */
+  cursor: not-allowed;
 }
