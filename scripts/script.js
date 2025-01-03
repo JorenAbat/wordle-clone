@@ -138,6 +138,7 @@ function restartGame() {
   resetLetterGrid(); // Reset the letter grid
   guessButton.disabled = false; // Disable button after winning
   guessInput.disabled = false; // Disable input after winning
+  guessInput.value = "";
 }
 function resetGameBoard() {
   gameBoard.innerHTML = ""; // Clear the game board
