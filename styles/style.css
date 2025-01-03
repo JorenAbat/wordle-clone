@@ -125,3 +125,98 @@ button:disabled {
   background-color: #d1d1d1; /* Disabled state */
   cursor: not-allowed;
 }
+
+/* Letter Grid */
+#letter-grid {
+  display: grid;
+  grid-template-columns: repeat(13, 40px);
+  grid-gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#letter-grid div {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #c5c5c5; /* Default gray for unguessed letters */
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 40px;
+  color: #3b3b3b; /* Darker text for readability */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#letter-grid div.correct {
+  background-color: #a8d5ba; /* Pastel green for correct letters */
+  color: white;
+}
+
+#letter-grid div.present {
+  background-color: #f9e9a2; /* Pastel yellow for present letters */
+  color: #3b3b3b;
+}
+
+#letter-grid div.absent {
+  background-color: #d6d6d6; /* Light gray for absent letters */
+  color: #a1a1a1;
+}
+
+/* Modal Overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+  z-index: 1000; /* Ensure it appears above other elements */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff; /* White background for the modal */
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #4e6e81; /* Match game colors */
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #a8d5ba; /* Pastel green */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #88c39d; /* Slightly darker green on hover */
+}
+#result-message {
+  margin-top: 20px; /* Add space above the result message */
+  font-size: 1rem; /* Adjust font size if necessary */
+  color: #333; /* Default color for the message */
+  text-align: center; /* Center the message */
+}

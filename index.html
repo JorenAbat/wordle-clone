@@ -11,10 +11,21 @@
 <body>
     <h1>Wordle Clone</h1>
     <div id="game-board"></div>
+    <div id="game-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-message"></p>
+            <button id="modal-close-button">Close</button>
+        </div>
+    </div>
     <input id="guess-input" type="text" maxlength="5" placeholder="Enter your guess" />
     <button id="guess-button">Submit</button>
     <div id="result-message"></div>
+<button id="restart-button" style="display:none;">Restart Game</button>
+
+    <div id="letter-grid"></div>
     <script src="./scripts/script.js"></script>
 </body>
+
 
 </html>
